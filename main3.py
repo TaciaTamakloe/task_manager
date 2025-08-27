@@ -1,16 +1,8 @@
-import add
-import show
-import update
-import delete
+from add import add_tasks
+from show import show_tasks
 
-add_tasks_response = add.add_task("Sleep")
-print(add_tasks_response)
+task_title = input("what task are you going to do ?:")
+add_tasks({"title": task_title})
 
-show_tasks_response = show.show_tasks()
-print(show_tasks_response)
-
-update_tasks_response = update.show_tasks("sleep","wake up")
-print(update_tasks_response)
-
-delete_tasks_response = delete.delete_task("wake up")
-print(delete_tasks_response)
+for task in show_tasks():
+    print(task)
